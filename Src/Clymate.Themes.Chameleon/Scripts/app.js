@@ -16,9 +16,9 @@ function updateSiteTheme(theme, el) {
 
     //Load the requested theme and apply to the page.
     try {
-        document.getElementById('CssTheme').href = '../Content/' + theme + '.min.css';
+        document.getElementById('CssTheme').href = 'Content/' + theme + '.min.css';
     } catch (err) {
-        document.getElementById('CssTheme').href = '../Content/Retro.min.css';
+        document.getElementById('CssTheme').href = 'Content/Retro.min.css';
         console.log("Exception at updateSiteTheme() " + err.message);
     }
 
