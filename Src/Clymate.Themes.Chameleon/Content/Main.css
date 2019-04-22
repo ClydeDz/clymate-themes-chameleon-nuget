@@ -4395,7 +4395,7 @@ a.website-links {
   padding: 9px 18px; }
 
 .ctn-secondary {
-  background: url("/Images/Banners/chameleon.jpg") no-repeat center;
+  background: url("../Images/Banners/chameleon.jpg") no-repeat center;
   background-size: cover;
   height: 100%; }
   .ctn-secondary > div {

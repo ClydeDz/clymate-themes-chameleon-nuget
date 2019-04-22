@@ -225,6 +225,29 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /y /e /i "$(SolutionDir)$(SolutionName)\Content\*" "$(ProjectDir)bin\$(ConfigurationName)\BuildOutput\content\Content\"
+xcopy /y /e /i "$(SolutionDir)$(SolutionName)\Content\*" "$(ProjectDir)bin\$(ConfigurationName)\BuildOutput\contentFiles\Content\"
+
+xcopy /y /e /i "$(SolutionDir)$(SolutionName)\Images\*" "$(ProjectDir)bin\$(ConfigurationName)\BuildOutput\content\Images\"
+xcopy /y /e /i "$(SolutionDir)$(SolutionName)\Images\*" "$(ProjectDir)bin\$(ConfigurationName)\BuildOutput\contentFiles\Images\"
+
+xcopy /y /e /i "$(SolutionDir)$(SolutionName)\Scripts\*" "$(ProjectDir)bin\$(ConfigurationName)\BuildOutput\content\Scripts\"
+xcopy /y /e /i "$(SolutionDir)$(SolutionName)\Scripts\*" "$(ProjectDir)bin\$(ConfigurationName)\BuildOutput\contentFiles\Scripts\"
+
+xcopy /y /i "$(SolutionDir)$(SolutionName)\index.html" "$(ProjectDir)bin\$(ConfigurationName)\BuildOutput\content\"
+xcopy /y /i "$(SolutionDir)$(SolutionName)\index.html" "$(ProjectDir)bin\$(ConfigurationName)\BuildOutput\contentFiles\"
+
+
+xcopy /y /i "$(SolutionDir)$(SolutionName)\favicon.ico" "$(ProjectDir)bin\$(ConfigurationName)\BuildOutput\content\"
+xcopy /y /i "$(SolutionDir)$(SolutionName)\favicon.ico" "$(ProjectDir)bin\$(ConfigurationName)\BuildOutput\contentFiles\"
+
+xcopy /y /i "$(SolutionDir)$(SolutionName)\humans.txt" "$(ProjectDir)bin\$(ConfigurationName)\BuildOutput\content\"
+xcopy /y /i "$(SolutionDir)$(SolutionName)\humans.txt" "$(ProjectDir)bin\$(ConfigurationName)\BuildOutput\contentFiles\"
+
+xcopy /y /i "$(SolutionDir)LICENSE" "$(ProjectDir)bin\$(ConfigurationName)\BuildOutput\"
+xcopy /y /i "$(SolutionDir)Clymate.Themes.Chameleon.nuspec" "$(ProjectDir)bin\$(ConfigurationName)\BuildOutput\"</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
