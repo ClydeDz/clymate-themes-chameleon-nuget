@@ -5,6 +5,12 @@ VisualStudioVersion = 16.0.28803.156
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clymate.Themes.Chameleon", "Clymate.Themes.Chameleon\Clymate.Themes.Chameleon.csproj", "{1C0F0CF7-C4B9-4D2F-B46A-BF76BD318D23}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution items", "Solution items", "{8DF5E9A9-5887-43B3-B9B0-33AECA6BFC51}"
+	ProjectSection(SolutionItems) = preProject
+		Clymate.Themes.Chameleon.nuspec = Clymate.Themes.Chameleon.nuspec
+		LICENSE = LICENSE
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Clymate.Themes.Chameleon</id>
+    <version>1.0.0</version>
+    <title>Chameleon by Clymate Themes</title>
+    <authors>Clyde D'Souza</authors>
+    <owners>clydedsouza</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <repository url="https://github.com/ClydeDz/clymate-themes-chameleon-nuget" />
+    <projectUrl>https://github.com/ClydeDz/clymate-themes-chameleon-nuget/wiki</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/ClydeDz/clymate-themes-chameleon-nuget/master/logo.png</iconUrl>
+    <description>Adds a themeable website called Chameleon to your project.</description>
+    <summary>Adds a themeable website called Chameleon to your project.</summary>
+    <releaseNotes>Read detailed release notes here: https://github.com/ClydeDz/clymate-scaffolding-sass-nuget/wiki#release-notes </releaseNotes>
+    <copyright>Copyright (c) 2019 Clyde D'Souza</copyright>
+    <language>en-us</language>
+    <tags>css less sass scss front-end framework javascript web scaffolding clymate preprocessor theme chameleon modular webcompiler</tags>
+    <dependencies>
+      <group targetFramework=".NETStandard2.0" />
+    </dependencies>
+  </metadata>
+</package>
