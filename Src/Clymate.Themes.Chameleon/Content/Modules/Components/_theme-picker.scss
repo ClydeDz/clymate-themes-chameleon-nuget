@@ -1,0 +1,58 @@
+﻿// COMPONENTS 
+@import "animation";
+
+// COLOURS
+@import '../Colours/retro';
+@import '../Colours/neon';
+@import '../Colours/vintage';
+@import '../Colours/fun';
+@import '../Colours/pop';
+@import '../Colours/grayscale';
+
+$themepicker-color: red;
+
+@mixin theme-picker-container( $border-colour ) {
+    background-color: transparentize( white, 0.1 );
+    border-bottom: 1px solid transparentize( $border-colour, 0.9 );
+}
+
+// PARTS IN THE THEME PICKER CIRCLE 
+@mixin theme-picker-parts ( $part-1, $part-2, $part-3, $part-4 ) {
+    > .part_1 {
+        background: $part-1;
+    }
+
+    > .part_2 {
+        background: $part-2;
+    }
+
+    > .part_3 {
+        background: $part-3;
+    }
+
+    > .part_4 {
+        background: $part-4;
+    }
+}
+
+@mixin theme-picker-appearance {
+    @include animate-generic( background-color, 0.5s, ease-in );
+
+    &:hover, &:focus {
+        @include animate-generic( background-color, 0.5s, ease-out );
+        background-color: lighten( $themepicker-color, 47% );
+    }
+
+    &:first-child:hover {
+        background-color: transparent;
+    }
+    
+    &.active {
+        @include animate-generic( border-top, 0.8s, linear);
+        border-top: 3px solid $themepicker-color;
+    }
+
+    .circle {
+        background: gray;
+    }
+}

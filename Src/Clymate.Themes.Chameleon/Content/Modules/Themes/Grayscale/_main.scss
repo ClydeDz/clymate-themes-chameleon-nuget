@@ -1,0 +1,9 @@
+﻿// COLOURS 
+@import '../../Colours/grayscale';
+
+// COMPONENTS 
+@import "../master";
+
+html {
+    @include apply-theme( $grayscale_colours... );
+}

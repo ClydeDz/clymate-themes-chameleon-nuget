@@ -1,0 +1,16 @@
+﻿// COMPONENTS
+@import "../Components/buttons";
+
+.btn-main {
+    @extend %btn-generic;
+}
+
+.btn-inverse {
+    @extend %btn-generic;
+}
+
+a.website-links {
+    @extend %link-generic;
+
+    padding-left:0;
+}

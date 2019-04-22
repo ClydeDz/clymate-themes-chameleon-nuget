@@ -1,0 +1,26 @@
+﻿// COMPONENTS
+@import "buttons";
+@import "containers";
+@import "theme-picker";
+@import "header";
+@import "slider";
+@import "text";
+@import "footer";
+
+body {
+    overflow-x: hidden;
+}
+
+.body-content {
+}
+
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+

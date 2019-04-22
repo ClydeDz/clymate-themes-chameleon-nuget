@@ -1,0 +1,121 @@
+﻿// COMPONENTS
+@import "breakpoints";
+@import "animation";
+@import "mobile";
+
+// FUNCTIONS 
+@function getHexCode( $hex-code ) {
+     @return "" + $hex-code;
+}
+
+// MIXINS
+%wide-container {
+
+    @include mobile-bp( $max-width, $even-breakpoint ) {
+        display: inline-block;
+    }
+
+    @include mobile-bp( $min-width, $even-breakpoint ) {
+        display: inline-flex;
+    }
+    
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 24px 0;
+}
+
+%half-col {
+    @include mobile-bp( $max-width, $even-breakpoint ) {
+        width: 100%;
+        display: inline-grid;
+    }
+
+    @include mobile-bp( $min-width, $even-breakpoint ) {
+        width: 50%;
+        display: inline-block;
+    }
+
+    margin: 0;
+    min-height: 300px;
+}
+
+@mixin ctn-main( $fg-color, $bg-color ) {
+    background-color: $bg-color;
+
+    h1, h2, h3, p {
+        color: $fg-color;
+    }
+}
+
+@mixin ctn-generic( $fg-color ) {
+    h1, h2, h3 {
+        color: $fg-color;
+    }
+}
+
+@mixin ctn-secondary( $bg-color ) {
+    > div {
+        background-color: transparentize( darken( $bg-color, 10% ), 0.6 );
+    }
+}
+
+%colour-scheme {
+    display: inline-block;
+    min-height: 200px;
+
+    p {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+
+        &:before {
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 9px;
+            position: relative;
+            left: 0;
+            display: block;
+            text-transform: uppercase;
+        }
+    }
+}
+
+@mixin colour-variant( $bg-color ) {
+    @include animate-generic( background-color, 0.5s, ease-out );
+
+    background-color: $bg-color;
+    color: white;
+
+    &:hover, &:focus{
+        @include animate-generic( background-color, 0.5s, ease-in );
+        background-color: lighten( $bg-color, 5% );
+    }
+
+    p:before {
+        content: getHexCode( $bg-color );
+    }
+}
+
+@mixin colour-variant-parts($part-1, $part-2, $part-3, $part-4) {
+    &.variant_1 {
+        @include colour-variant( $part-1 );
+    }
+
+    &.variant_2 {
+        @include colour-variant( $part-2 );
+    }
+
+    &.variant_3 {
+        @include colour-variant( $part-3 );
+    }
+
+    &.variant_4 {
+        @include colour-variant( $part-4 );
+    }
+}
+
+%attn-links {
+    padding: 18px 9px;
+}

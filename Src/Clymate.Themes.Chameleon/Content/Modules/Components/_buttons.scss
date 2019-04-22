@@ -1,0 +1,66 @@
+﻿// COMPONENTS
+@import "breakpoints";
+@import "animation";
+@import "mobile";
+
+%btn-link-generic {
+    @include animate-generic( all, 0.5s, ease );
+
+    @include mobile-bp( $max-width, $small-breakpoint ) {
+        margin: 9px 0;
+        padding: 9px;
+    }
+
+    margin: 9px 9px 9px 0;
+    padding: 9px 18px;
+    text-decoration: none !important;
+    white-space: nowrap;
+    display: inline-block;
+    border: 1px solid transparent;
+}
+
+%btn-generic {
+    @extend %btn-link-generic;
+    border-radius: 30px;
+}
+
+@mixin btn-main-inverse ( $fg-color, $bg-color ) {
+    background-color: $bg-color;
+    border-color: $bg-color;
+    color: $fg-color;
+
+    &:hover, &:focus {
+        background-color: darken( $bg-color, 5% );
+        color: $fg-color;
+    }
+}
+
+@mixin btn-main ( $fg-color, $bg-color ) {
+    @include btn-main-inverse( $fg-color, $bg-color );
+}
+
+@mixin btn-inverse ( $fg-color, $bg-color ) {
+    @include btn-main-inverse( $fg-color, $bg-color );
+}
+
+%link-generic {
+    @extend %btn-link-generic;
+
+    &:hover, &:focus {
+        border-bottom: 1px dashed;
+    }
+
+    i.mdi {
+        margin-right: 4px;
+        font-size: large;
+    }
+}
+
+@mixin link ( $fg-color ) {
+    color: $fg-color;
+
+    &:hover, &:focus {
+        color: darken( $fg-color, 5% );
+        border-bottom-color: $fg-color;
+    }
+}

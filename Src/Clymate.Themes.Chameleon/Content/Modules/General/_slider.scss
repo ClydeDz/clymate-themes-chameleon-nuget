@@ -1,0 +1,53 @@
+﻿// COMPONENTS
+@import "../Components/animation";
+
+// Slideshow container
+.slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+    padding: 24px 0 18px 0;
+
+    .slide {
+        text-align: center;
+
+        &:before {
+            content: "\201C";
+            position: relative;
+            left: -50px;
+            font-size: 50px;
+        }
+
+        &:after {
+            content: "\201D";
+            position: relative;
+            left: 50px;
+            font-size: 50px;
+        }
+        // Caption text
+        .text {
+            padding: 14px 12px;
+            width: 100%;
+            text-align: center;
+        }
+    }
+}
+
+.slider-nav {
+    margin: 18px 0;
+}
+
+// The dots/bullets/indicators
+.dot {
+    @include animate-generic( background-color, 0.6s, ease );
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    margin: 0 2px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.fade {
+    @include animate-fade;
+}
